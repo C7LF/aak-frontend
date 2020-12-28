@@ -16,8 +16,9 @@
     }
   },
   "lint-staged": {
-    ".aak-client/**/*.{js,jsx,ts,tsx}": [
-      "cd aak-client && eslint --fix"
+    "aak-client/**/*.{js,jsx,ts,tsx}": [
+      "cd aak-client", 
+      "eslint --fix"
     ]
   },
   "repository": {
