@@ -1,0 +1,33 @@
+{
+  "name": "andys-american-kustoms",
+  "version": "0.0.1",
+  "description": "Mono-repo for AAK web app",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    ".aak-client/**/*.{js,jsx,ts,tsx}": [
+      "cd aak-client && eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C7LF/aak.git"
+  },
+  "author": "Callum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C7LF/aak/issues"
+  },
+  "homepage": "https://github.com/C7LF/aak#readme"
+}
