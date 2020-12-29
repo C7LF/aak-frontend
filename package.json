@@ -12,14 +12,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "cd aak-client && npm run lint"
     }
-  },
-  "lint-staged": {
-    "aak-client/**/*.{js,jsx,ts,tsx}": [
-      "cd aak-client", 
-      "eslint --fix"
-    ]
   },
   "repository": {
     "type": "git",
