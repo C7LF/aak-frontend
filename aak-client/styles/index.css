@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
+/* Apply Lato font */
+html {
+  @apply font-body;
+}
+
+/* Custom Radial Gradient */
+.rad-red {
+  background: rgb(211, 2, 1);
+  background: radial-gradient(
+    circle,
+    rgba(211, 2, 1, 1) 0%,
+    rgba(169, 1, 0, 1) 100%
+  );
+}
+
+/* z-index not working? */
+.z-1 {
+  z-index: 1;
+}
