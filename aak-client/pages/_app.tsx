@@ -1,6 +1,8 @@
 import '../styles/index.css';
 
-import type { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/react-hooks';
+import client from '@lib/apollo';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 
@@ -17,8 +19,10 @@ const GlobalStyle = () => {
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
-      <GlobalStyle />
-      <Component {...pageProps}></Component>
+      <ApolloProvider client={client}>
+        <GlobalStyle />
+        <Component {...pageProps}></Component>
+      </ApolloProvider>
     </>
   );
 };
