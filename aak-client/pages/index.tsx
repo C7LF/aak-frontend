@@ -1,13 +1,24 @@
-import { useQuery } from '@apollo/react-hooks';
 import { Gallery } from '@components/gallery.component';
 import { GET_GALLERY_PROJECTS } from '@graphql/queries/projects';
+import client from '@lib/apollo';
+import { GetStaticProps } from 'next';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
 
-const Home: React.FC<AppProps> = () => {
-  const { data } = useQuery(GET_GALLERY_PROJECTS);
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    query: GET_GALLERY_PROJECTS,
+  });
 
+  return {
+    props: {
+      projects: data.projects,
+    },
+  };
+};
+
+const Home: React.FC<AppProps> = ({ projects }) => {
   return (
     <>
       <Head>
@@ -49,7 +60,7 @@ const Home: React.FC<AppProps> = () => {
           <h2 className="uppercase text-3xl font-black text-gray-800">About</h2>
         </div>
       </main>
-      {data && <Gallery items={data.projects} />}
+      {projects && <Gallery items={projects} />}
     </>
   );
 };
