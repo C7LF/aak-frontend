@@ -1,10 +1,11 @@
-import '../styles/index.css';
+import React from 'react';
 
 import { ApolloProvider } from '@apollo/react-hooks';
-import client from '@lib/apollo';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import React from 'react';
+
+import client from '@lib/apollo';
+import '../styles/index.css';
 
 const GlobalStyle = () => {
   return (

@@ -8,7 +8,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'import'],
   settings: {
     react: {
       version: 'detect',
@@ -41,7 +41,36 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@apollo/**',
+            group: 'external',
+          },
+          {
+            pattern: '@graphql/**',
+            group: 'external',
+          },
+          {
+            pattern: '@*/**',
+            group: 'internal',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
 };

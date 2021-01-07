@@ -1,6 +1,8 @@
-import { GalleryItem } from '@models/gallery-item.model';
-import Image from 'next/image';
 import React, { useState } from 'react';
+
+import Image from 'next/image';
+
+import { GalleryItem } from '@models/gallery-item.model';
 
 interface GalleryItemProps {
   items: GalleryItem[];
