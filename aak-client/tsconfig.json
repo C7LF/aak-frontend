@@ -20,7 +20,8 @@
       "@mock-data/*": ["mock-data/*"],
       "@graphql/*": ["graphql/*"],
       "@models/*": ["models/*"],
-      "@lib/*": ["lib/*"]
+      "@lib/*": ["lib/*"],
+      "@enums/*": ["enums/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],

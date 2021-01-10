@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GET_GALLERY_PROJECTS } from '@graphql/queries/projects';
+import { GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticProps } from 'next';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
@@ -10,7 +10,7 @@ import client from '@lib/apollo';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
-    query: GET_GALLERY_PROJECTS,
+    query: GET_PROJECTS,
   });
 
   return {

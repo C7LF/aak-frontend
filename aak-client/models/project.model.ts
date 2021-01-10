@@ -1,7 +1,8 @@
 import { Image } from '@models/image.model';
 
-export interface Project {
+export interface SingleProject {
   id: number;
+  slug: string;
   title: string;
   content: string;
   published_at: string;
