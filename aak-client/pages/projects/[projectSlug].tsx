@@ -1,17 +1,13 @@
 import React from 'react';
 
 import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  InferGetServerSidePropsType,
-} from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 
 interface ProjectProps {
-  project: InferGetServerSidePropsType<typeof getStaticProps>;
+  project: InferGetStaticPropsType<typeof getStaticProps>;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -26,6 +22,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       project: data.projects[0],
     },
+    revalidate: 1,
   };
 };
 

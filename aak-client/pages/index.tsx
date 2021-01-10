@@ -6,6 +6,7 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
 
 import { Gallery } from '@components/gallery.component';
+import NavBar from '@components/navbar.component';
 import client from '@lib/apollo';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -17,6 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       projects: data.projects,
     },
+    revalidate: 1,
   };
 };
 
@@ -28,6 +30,7 @@ const Home: React.FC<AppProps> = ({ projects }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <NavBar />
       <main>
         <div className="top h-screen flex">
           <div className="left rad-red transform md:-skew-x-6 h-full w-full lg:w-3/4 xl:w-1/2 overflow-x-hidden md:-ml-20 flex justify-center md:justify-end lg:justify-center z-1 md:pr-10 lg:pr-0">
@@ -58,8 +61,8 @@ const Home: React.FC<AppProps> = ({ projects }) => {
             <div className="absolute h-2/3 w-36 transform -skew-x-6 bg-secondary self-center"></div>
           </div>
         </div>
-        <div className="mx-auto text-center my-20">
-          <h2 className="uppercase text-3xl font-black text-gray-800">About</h2>
+        <div className="mx-auto container text-center my-20">
+          <p className="text-3xl font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus mi nec sem sodales, eget pellentesque neque pulvinar. Phasellus sollicitudin erat sit amet tempus gravida. Nam in ex molestie</p>
         </div>
       </main>
       {projects && <Gallery items={projects} />}

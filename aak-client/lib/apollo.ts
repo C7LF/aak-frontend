@@ -24,7 +24,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 });
 
 const client = new ApolloClient({
-  ssrMode: true,
+  ssrMode: typeof window === 'undefined',
   link: from([errorLink, httpLink]),
   cache: new InMemoryCache(),
 });
