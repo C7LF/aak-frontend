@@ -5,6 +5,12 @@
 @layer components {
 }
 
+@layer utilities {
+  .h-500 {
+    height: 500px;
+  }
+}
+
 /* Apply Lato font */
 html {
   @apply font-body;
@@ -17,6 +23,15 @@ html {
     circle,
     rgba(211, 2, 1, 1) 0%,
     rgba(169, 1, 0, 1) 100%
+  );
+}
+
+.epic-gray {
+  background: rgb(251, 251, 251);
+  background: linear-gradient(
+    183deg,
+    #f0f0f0 calc(75% - 1px),
+    rgba(255, 255, 255, 1) 75%
   );
 }
 

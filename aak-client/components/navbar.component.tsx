@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
 
   return (
     <div
-      className={`transition-all duration-500 ease-in-out overflow-hidden fixed w-full top-0 z-10 bg-gray-50 ${
+      className={`transition-all duration-500 ease-in-out overflow-hidden fixed w-full top-0 z-10 rad-red ${
         position > 50 ? 'mt-0' : '-mt-24'
       }`}
     >

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 import { Routes } from '@enums/routes.enum';
 import { GalleryItem } from '@models/gallery-item.model';
@@ -20,7 +20,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
           const { url: imageURL, width } = item.image.formats.small;
           return (
             <div key={item.id} className="w-full lg:my-2 relative">
-              <NextLink
+              <Link
                 href={`/${Routes.Projects}/[projectSlug]`}
                 as={`/${Routes.Projects}/${item.slug}`}
                 passHref
@@ -46,7 +46,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
                     </span>
                   </div>
                 </a>
-              </NextLink>
+              </Link>
             </div>
           );
         })}
