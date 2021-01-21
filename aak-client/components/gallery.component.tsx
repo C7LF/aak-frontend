@@ -17,9 +17,10 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
     <div className="container mx-auto">
       <div className="grid grid-cols-3 gap-2">
         {items.map((item: GalleryItem) => {
-          const { url: imageURL, width } = item.image.formats.small;
+          const { url: imageURL } = item.image.formats.small ?? item.image;
+
           return (
-            <div key={item.id} className="w-full lg:my-2 relative">
+            <div key={item.id} className="relative">
               <Link
                 href={`/${Routes.Projects}/[projectSlug]`}
                 as={`/${Routes.Projects}/${item.slug}`}
@@ -27,11 +28,11 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
               >
                 <a>
                   <Image
-                    src={`http://localhost:1337${imageURL}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}${imageURL}`}
                     objectFit="cover"
                     layout="responsive"
-                    width={width}
-                    height={400}
+                    width="auto"
+                    height="200px"
                   />
                   <div
                     onMouseOver={() => setHoveredId(item.id)}

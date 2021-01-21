@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
 
+import NavBar from '@components/navbar.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 
 interface ProjectProps {
-  project: InferGetStaticPropsType<typeof getStaticProps>;
+  project: SingleProject;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -42,7 +44,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
-  return <p>{JSON.stringify(project)}</p>;
+  return (
+    <>
+      <NavBar />
+      <div className="mt-24 container mx-auto">
+        <div className="h-pi relative">
+          <Image
+            src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
+            alt={project.image.alternativeText}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+        <h1>{project.title}</h1>
+        <p>{project.content}</p>
+      </div>
+    </>
+  );
 };
 
 export default Project;

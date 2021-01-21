@@ -21,7 +21,8 @@
       "@graphql/*": ["graphql/*"],
       "@models/*": ["models/*"],
       "@lib/*": ["lib/*"],
-      "@enums/*": ["enums/*"]
+      "@enums/*": ["enums/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],

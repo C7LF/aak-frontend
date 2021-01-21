@@ -7,6 +7,8 @@ export const GET_PROJECTS = gql`
       slug
       title
       image {
+        url
+        alternativeText
         formats
       }
     }
@@ -21,6 +23,8 @@ export const GET_PROJECT = gql`
       title
       content
       image {
+        url
+        alternativeText
         formats
       }
     }
