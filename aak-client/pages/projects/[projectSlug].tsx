@@ -4,6 +4,7 @@ import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
+import Breadcrumbs from '@components/breadcrumbs.component';
 import NavBar from '@components/navbar.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
@@ -48,6 +49,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
     <>
       <NavBar />
       <div className="mt-24 container mx-auto">
+        <Breadcrumbs />
         <div className="h-pi relative">
           <Image
             src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
@@ -56,7 +58,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
             objectFit="cover"
           />
         </div>
-        <h1>{project.title}</h1>
+        <h1 className="text-5xl font-semibold">{project.title}</h1>
         <p>{project.content}</p>
       </div>
     </>
