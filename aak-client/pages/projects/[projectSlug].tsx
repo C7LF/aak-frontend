@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
 import Breadcrumbs from '@components/breadcrumbs.component';
-import NavBar from '@components/navbar.component';
+import { Layout } from '@components/layout.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 
@@ -47,8 +47,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
     <>
-      <NavBar />
-      <div className="mt-24 container mx-auto">
+      <Layout varient="regular">
         <Breadcrumbs />
         <div className="h-pi relative">
           <Image
@@ -60,7 +59,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         </div>
         <h1 className="text-5xl font-semibold">{project.title}</h1>
         <p>{project.content}</p>
-      </div>
+      </Layout>
     </>
   );
 };
