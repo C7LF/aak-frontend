@@ -46,21 +46,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <>
-      <Layout varient="regular">
-        <Breadcrumbs />
-        <div className="h-pi relative">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
-            alt={project.image.alternativeText}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-        <h1 className="text-5xl font-semibold">{project.title}</h1>
-        <p>{project.content}</p>
-      </Layout>
-    </>
+    <Layout varient="regular">
+      <Breadcrumbs />
+      <div className="h-pi relative">
+        <Image
+          src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
+          alt={project.image.alternativeText}
+          loading="lazy"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <h1 className="text-5xl font-semibold">{project.title}</h1>
+      <p>{project.content}</p>
+    </Layout>
   );
 };
 
