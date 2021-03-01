@@ -22,9 +22,12 @@ export interface Small {
   url: string;
 }
 
+export type Large = Small;
+
 export interface Formats {
   thumbnail: Thumbnail;
   small: Small;
+  large: Large;
 }
 
 export interface Image {

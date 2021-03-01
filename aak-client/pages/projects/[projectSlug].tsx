@@ -4,7 +4,8 @@ import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
-import Breadcrumbs from '@components/breadcrumbs.component';
+import { Breadcrumbs } from '@components/breadcrumbs.component';
+import { FancyGallery } from '@components/fancy-gallery.component';
 import { Layout } from '@components/layout.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
@@ -46,19 +47,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <Layout varient="regular">
-      <Breadcrumbs />
-      <div className="h-pi relative">
-        <Image
-          src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
-          alt={project.image.alternativeText}
-          loading="lazy"
-          layout="fill"
-          objectFit="cover"
-        />
+    <Layout varient="full">
+      <div className="container mx-auto">
+        <Breadcrumbs />
       </div>
-      <h1 className="text-5xl font-semibold">{project.title}</h1>
-      <p>{project.content}</p>
+      <div className="flex">
+        <div className="w-1/2 bg-gray-100">
+          <div className="container inset-center mt-20">
+            <div className="lg:w-1/2 lg:pr-12">
+              <h1 className="text-5xl font-semibold mb-2">{project.title}</h1>
+              <p className="font-light text-lg">{project.content}</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/2 h-pi relative">
+          <Image
+            src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
+            alt={project.image.alternativeText}
+            loading="lazy"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
+      <div className="container mx-auto relative">
+        {project.fancyGallery && (
+          <FancyGallery fancyItems={project.fancyGallery} />
+        )}
+      </div>
     </Layout>
   );
 };

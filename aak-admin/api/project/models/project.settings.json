@@ -30,6 +30,11 @@
     },
     "slug": {
       "type": "string"
+    },
+    "fancyGallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "gallery.fancy-gallery"
     }
   }
 }

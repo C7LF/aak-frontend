@@ -27,6 +27,16 @@ export const GET_PROJECT = gql`
         alternativeText
         formats
       }
+      fancyGallery {
+        images {
+          url
+          width
+          height
+          caption
+          alternativeText
+          formats
+        }
+      }
     }
   }
 `;

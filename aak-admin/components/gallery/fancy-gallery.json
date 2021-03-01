@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_gallery_fancy_galleries",
+  "info": {
+    "name": "Fancy Gallery",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -9,8 +9,9 @@
   .h-500 {
     height: 500px;
   }
+
   .h-pi {
-    height: 36em;
+    min-height: 32em;
   }
 }
 
@@ -41,4 +42,10 @@ html {
 /* z-index not working? */
 .z-1 {
   z-index: 1;
+}
+
+.inset-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

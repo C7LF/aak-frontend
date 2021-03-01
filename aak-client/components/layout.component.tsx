@@ -10,7 +10,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, varient }) => {
   return (
     <>
       <NavBar />
-      <div className={`${varient && 'container mx-auto'} mt-28`}>
+      <div className={`${varient !== 'full' && 'container mx-auto'} mt-28`}>
         {children}
       </div>
     </>

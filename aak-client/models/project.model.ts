@@ -8,5 +8,8 @@ export interface SingleProject {
   published_at?: string;
   created_at?: string;
   updated_at?: string;
+  fancyGallery: {
+    images: Image[];
+  };
   image: Image;
 }

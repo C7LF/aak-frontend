@@ -5,10 +5,12 @@ import {
   InMemoryCache,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
+import fetch from 'node-fetch';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
 
 const httpLink = createHttpLink({
+  fetch,
   uri: `${API_URL}/graphql`,
 });
 
