@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import Image from 'next/image';
 
@@ -6,6 +6,7 @@ import { FancyGalleryItem } from '@models/fancy-gallery-item.model';
 import { Image as ImageType } from '@models/image.model';
 
 import CloseIcon from '../public/assets/cancel.svg';
+import useOutsideClick from '@utils/use-outside-click';
 
 interface FancyGalleryItemProps {
   fancyItems: FancyGalleryItem;
@@ -40,6 +41,14 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
       : bodyClassList.remove(HIDDEN_OVERFLOW);
   };
 
+  useOutsideClick(
+    overlay,
+    () => {
+      toggleLightBox(null);
+    },
+    lightBoxOpen
+  );
+
   const chunk = 4;
 
   const chunckedArray = fancyItems.images.reduce((resultArray, item, index) => {
@@ -55,27 +64,6 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
 
     return resultArray;
   }, []);
-
-  const handleClickOutside = useCallback(
-    (event: MouseEvent) => {
-      if (
-        overlay.current &&
-        !overlay.current.contains(event.target as HTMLDivElement)
-      ) {
-        toggleLightBox(null);
-      }
-    },
-    [lightBoxOpen]
-  );
-
-  useEffect(() => {
-    lightBoxOpen &&
-      document.addEventListener('click', handleClickOutside, false);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside, false);
-    };
-  }, [lightBoxOpen]);
 
   return (
     <div className="my-12">

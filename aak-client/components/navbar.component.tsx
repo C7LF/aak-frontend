@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import { Routes } from '@enums/routes.enum';
-import useWindowPosition from '@utils/useWindowPosition';
+import useWindowPosition from '@utils/use-window-position';
 
 import Logo from '../public/assets/logo.svg';
 
