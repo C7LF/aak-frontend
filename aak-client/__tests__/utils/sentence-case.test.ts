@@ -1,4 +1,4 @@
-import { sentenceCase } from './sentence-case';
+import { sentenceCase } from '@utils/sentence-case';
 
 describe('sentenceCase', () => {
   it('should be a function', () => {

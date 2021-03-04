@@ -1,4 +1,6 @@
-export const ProjectsMockData = [
+import { SingleProject } from '@models/project.model';
+
+export const ProjectsMockData: SingleProject[] = [
   {
     id: 1,
     title: 'First Post!!',
@@ -37,6 +39,17 @@ export const ProjectsMockData = [
           size: 57.91,
           path: null,
           url: '/uploads/small_camaro_at_newark_66a0558cb0.jpg',
+        },
+        large: {
+          name: 'large_camaro at newark.jpg',
+          hash: 'large_camaro_at_newark_66a0558cb0',
+          ext: '.jpg',
+          mime: 'image/jpeg',
+          width: 500,
+          height: 375,
+          size: 57.91,
+          path: null,
+          url: '/uploads/large_camaro_at_newark_66a0558cb0.jpg',
         },
       },
       hash: 'camaro_at_newark_66a0558cb0',

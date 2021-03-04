@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 
-import { sentenceCase } from '@utils/sentence-case/sentence-case';
+import { sentenceCase } from '@utils/sentence-case';
 
 export const Breadcrumbs: React.FC = () => {
   const router = useRouter();
