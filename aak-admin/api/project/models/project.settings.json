@@ -35,6 +35,9 @@
       "type": "component",
       "repeatable": false,
       "component": "gallery.fancy-gallery"
+    },
+    "heroContent": {
+      "type": "text"
     }
   }
 }

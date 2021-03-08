@@ -56,7 +56,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
           <div className="container inset-center mt-20">
             <div className="lg:w-1/2 lg:pr-12">
               <h1 className="text-5xl font-semibold mb-2">{project.title}</h1>
-              <p className="font-light text-lg">{project.content}</p>
+              <p className="font-light text-lg">{project.heroContent}</p>
             </div>
           </div>
         </div>
@@ -71,6 +71,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         </div>
       </div>
       <div className="container mx-auto relative">
+        <p className="mt-16">{project.content}</p>
         {project.fancyGallery && (
           <FancyGallery fancyItems={project.fancyGallery} />
         )}

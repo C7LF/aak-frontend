@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { Footer } from '@components/footer.component';
 import { Gallery } from '@components/gallery.component';
 import NavBar from '@components/navbar.component';
 import client from '@lib/apollo';
@@ -105,6 +106,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
         </div>
         <div className="-mt-60">{projects && <Gallery items={projects} />}</div>
       </main>
+      <Footer />
     </>
   );
 };

@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 import { FancyGalleryItem } from '@models/fancy-gallery-item.model';
 import { Image as ImageType } from '@models/image.model';
+import useOutsideClick from '@utils/use-outside-click';
 
 import CloseIcon from '../public/assets/cancel.svg';
-import useOutsideClick from '@utils/use-outside-click';
 
 interface FancyGalleryItemProps {
   fancyItems: FancyGalleryItem;

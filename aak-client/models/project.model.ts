@@ -4,6 +4,7 @@ export interface SingleProject {
   id: number;
   slug: string;
   title: string;
+  heroContent?: string;
   content?: string;
   published_at?: string;
   created_at?: string;

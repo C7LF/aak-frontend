@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 
 import { Routes } from '@enums/routes.enum';
 import useWindowPosition from '@utils/use-window-position';
@@ -31,9 +32,9 @@ const NavBar: React.FC = () => {
           />
           <ul className="lg:flex items-center pt-4 lg:pt-0 uppercase font-medium">
             {Object.keys(Routes).map((key, i) => (
-              <a key={i} href={Routes[key]} className={navItemClassName}>
-                {key}
-              </a>
+              <Link key={i} href={Routes[key]} passHref>
+                <a className={navItemClassName}>{key}</a>
+              </Link>
             ))}
           </ul>
         </nav>

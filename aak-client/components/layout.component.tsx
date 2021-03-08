@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Footer } from './footer.component';
 import NavBar from './navbar.component';
 
 interface LayoutProps {
@@ -13,6 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, varient }) => {
       <div className={`${varient !== 'full' && 'container mx-auto'} mt-28`}>
         {children}
       </div>
+      <Footer />
     </>
   );
 };

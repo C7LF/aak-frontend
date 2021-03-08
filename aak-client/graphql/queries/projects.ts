@@ -21,6 +21,7 @@ export const GET_PROJECT = gql`
       id
       slug
       title
+      heroContent
       content
       image {
         url

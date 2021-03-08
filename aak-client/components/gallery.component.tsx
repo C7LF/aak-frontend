@@ -22,8 +22,8 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
           return (
             <div key={item.id} className="relative">
               <Link
-                href={`/${Routes.Projects}/[projectSlug]`}
-                as={`/${Routes.Projects}/${item.slug}`}
+                href={`${Routes.Projects}/[projectSlug]`}
+                as={`${Routes.Projects}/${item.slug}`}
                 passHref
               >
                 <a>
