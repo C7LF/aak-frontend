@@ -55,11 +55,23 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
                 look at my projects below and contact me if you think I can
                 help.
               </p>
-              <button className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-bold rounded-md bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 mr-3">
+              <button className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-medium rounded-tl-lg rounded-br-lg bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 hover:border-gray-800 mr-3">
                 View Projects
               </button>
-              <button className="px-6 py-2.5 text-gray-300 transition-colors duration-150 font-bold rounded-md border-2 border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
-                Contact
+              <button className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
+                <span>Contact</span>
+                <svg
+                  className="w-6 h-4 ml-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -78,24 +90,19 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
             <div className="pt-20 flex-1 text-center self-center">
               <Link href="/" passHref>
                 <a>
-                  <button className="text-grey-800 rounded-md border-2 border-gray-800 text-lg font-bold py-3 px-5 inline-flex items-center">
+                  <button className="text-grey-800 rounded-tl-lg rounded-br-lg border-2 border-gray-800 text-lg py-3 px-5 inline-flex items-center">
                     <span>All Projects</span>
                     {/* TODO: SVG needs moving out to a component */}
                     <svg
+                      className="w-6 h-4 ml-2"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="w-4 h-4 ml-2"
                     >
                       <path
-                        fillRule="evenodd"
-                        d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
+                        fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
                       />
                     </svg>
                   </button>

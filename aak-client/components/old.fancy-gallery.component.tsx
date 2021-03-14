@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { FancyGalleryItem } from '@models/fancy-gallery-item.model';
+import { Image as ImageType } from '@models/image.model';
 import useOutsideClick from '@utils/use-outside-click';
 
 import CloseIcon from '../public/assets/cancel.svg';
@@ -40,41 +41,71 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
       : bodyClassList.remove(HIDDEN_OVERFLOW);
   };
 
-  const closeLightBox = () => toggleLightBox(null);
+  useOutsideClick(
+    overlay,
+    () => {
+      toggleLightBox(null);
+    },
+    lightBoxOpen
+  );
 
-  useOutsideClick(overlay, closeLightBox, lightBoxOpen);
+  const chunk = 4;
+
+  const chunckedArray = fancyItems.images.reduce((resultArray, item, index) => {
+    const cIndex = Math.floor(index / chunk);
+
+    // If value at cIndex doesn't exist then create a new chunk / array.
+    if (!resultArray[cIndex]) {
+      resultArray[cIndex] = [];
+    }
+
+    // push the item into chunked array.
+    resultArray[cIndex].push(item);
+
+    return resultArray;
+  }, []);
 
   return (
     <div className="my-12">
-      {fancyItems.images.map((item, i) => {
-        const urlPrefix = process.env.NEXT_PUBLIC_API_URL;
+      {chunckedArray.map((imageRow, iR: number) => (
+        <div className="flex flex-wrap" key={iR}>
+          {imageRow.map((item: ImageType) => {
+            const urlPrefix = process.env.NEXT_PUBLIC_API_URL;
 
-        const { formats, url, width, height, alternativeText, caption } = item;
+            const {
+              formats,
+              url,
+              width,
+              height,
+              alternativeText,
+              caption,
+            } = item;
 
-        const lbItem: LightBoxItem = {
-          url: `${urlPrefix}${formats.large?.url ?? url}`,
-          width: formats.large?.width ?? width,
-          height: formats.large?.height ?? height,
-          alternativeText,
-          caption,
-        };
+            const lbItem: LightBoxItem = {
+              url: `${urlPrefix}${formats.large?.url ?? url}`,
+              width: formats.large?.width ?? width,
+              height: formats.large?.height ?? height,
+              alternativeText,
+              caption,
+            };
 
-        return (
-          <div className="flex flex-wrap" key={i}>
-            <div className="w-1/2 lg:w-1/4 h-72 relative">
-              {/* <p>{item.caption}</p> */}
-              <Image
-                className="cursor-pointer "
-                src={`${process.env.NEXT_PUBLIC_API_URL}${item.formats.small.url}`}
-                layout="fill"
-                objectFit="cover"
-                alt={item.alternativeText}
-                onClick={() => toggleLightBox(lbItem)}
-              />
-            </div>
-          </div>
-        );
-      })}
+            return (
+              <div className="w-1/2 lg:w-1/4 h-72 relative">
+                {/* <p>{item.caption}</p> */}
+                <Image
+                  className="cursor-pointer "
+                  src={`${process.env.NEXT_PUBLIC_API_URL}${item.formats.small.url}`}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={item.alternativeText}
+                  onClick={() => toggleLightBox(lbItem)}
+                />
+              </div>
+            );
+          })}
+        </div>
+      ))}
+
       {lightBoxOpen && lightBoxSource && (
         <div className="fixed w-full h-full top-0 left-0 z-10 bg-black bg-opacity-80 flex flex-col justify-center">
           <img

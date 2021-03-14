@@ -17,7 +17,7 @@ export const Breadcrumbs: React.FC = () => {
       <nav className="my-6 text-gray-600" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex">
           {breadcrumbs.map((slug, i) => (
-            <>
+            <React.Fragment key={i}>
               <li className="flex items-center">
                 <Link
                   href={`/${breadcrumbs.slice(1, i + 1).join('/')}`}
@@ -40,7 +40,7 @@ export const Breadcrumbs: React.FC = () => {
                   />
                 )}
               </li>
-            </>
+            </React.Fragment>
           ))}
         </ol>
       </nav>

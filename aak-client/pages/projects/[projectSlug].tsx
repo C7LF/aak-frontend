@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
 import { Breadcrumbs } from '@components/breadcrumbs.component';
-import { FancyGallery } from '@components/fancy-gallery.component';
+import { FancyGallery } from '@components/old.fancy-gallery.component';
 import { Layout } from '@components/layout.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
@@ -45,6 +45,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+const newLineText = (text: string) => {
+  return text.split('\n').map((str: string) => <p className="mt-8">{str}</p>);
+};
+
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
     <Layout varient="full">
@@ -71,7 +75,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         </div>
       </div>
       <div className="container mx-auto relative">
-        <p className="mt-16">{project.content}</p>
+        {newLineText(project.content)}
         {project.fancyGallery && (
           <FancyGallery fancyItems={project.fancyGallery} />
         )}
