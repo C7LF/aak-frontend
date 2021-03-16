@@ -15,7 +15,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-2">
         {items.map((item: GalleryItem) => {
           const { url: imageURL } = item.image.formats.small ?? item.image;
 
@@ -42,7 +42,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
                       hoveredId === item.id && 'opacity-100'
                     } opacity-0 absolute flex top-0 left-0 p-2 w-full h-full justify-center cursor-pointer text-gray-50 text-2xl items-center bg-black bg-opacity-50 transition ease-in-out duration-200`}
                   >
-                    <span className="border-solid border-2 py-8 px-12 border-gray-50">
+                    <span className="border-solid border-2 md:p-8 border-gray-50">
                       {item.title}
                     </span>
                   </div>

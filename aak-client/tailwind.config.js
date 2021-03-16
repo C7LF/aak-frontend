@@ -5,6 +5,9 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   theme: {
+    container: {
+      padding: '1em'
+    },
     fontFamily: {
       body: ['Lato', 'sans-serif'],
       display: ['Lato', 'sans-serif'],

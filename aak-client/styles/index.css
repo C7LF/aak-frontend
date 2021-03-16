@@ -7,7 +7,7 @@
 
 @layer utilities {
   .h-500 {
-    height: 500px;
+    min-height: 500px;
   }
 
   .h-pi {
