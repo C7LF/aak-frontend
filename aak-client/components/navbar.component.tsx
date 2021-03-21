@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Routes } from '@enums/routes.enum';
 import useWindowPosition from '@utils/use-window-position';
 
 import Logo from '../public/assets/logo.svg';
-import Hamburger from '../public/assets/logo.svg';
+import { HamburgerIcon } from '@components/icons/hambuger.icon';
 
 const NavBar: React.FC = () => {
   const position = useWindowPosition();
@@ -34,6 +34,18 @@ const NavBar: React.FC = () => {
 
   const menuOpenClasses = menuOpen ? 'h-full md:h-auto' : 'h-0 md:h-auto';
 
+  const HIDDEN_OVERFLOW = 'overflow-hidden';
+
+  const toggleMenu = () => {
+    const bodyClassList = document.body.classList;
+
+    setMenuOpen(!menuOpen);
+
+    !menuOpen
+      ? bodyClassList.add(HIDDEN_OVERFLOW)
+      : bodyClassList.remove(HIDDEN_OVERFLOW);
+  }
+
   return (
     <>
       <div
@@ -42,21 +54,10 @@ const NavBar: React.FC = () => {
         <div
           className={`container flex mx-auto py-5 ${navControls} transition-all duration-300 ease-in-out`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <HamburgerIcon
             className="w-8 md:hidden mr-6"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+            onClick={() => toggleMenu()}
+          />
           <img
             src={Logo}
             alt="andy's american kustoms logo"

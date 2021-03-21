@@ -42,7 +42,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
                       hoveredId === item.id && 'opacity-100'
                     } opacity-0 absolute flex top-0 left-0 p-2 w-full h-full justify-center cursor-pointer text-gray-50 text-2xl items-center bg-black bg-opacity-50 transition ease-in-out duration-200`}
                   >
-                    <span className="border-solid border-2 md:p-8 border-gray-50">
+                    <span className="border-solid border-2 p-4 md:p-8 text-center border-gray-50">
                       {item.title}
                     </span>
                   </div>

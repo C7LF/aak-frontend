@@ -10,6 +10,7 @@ import { Gallery } from '@components/gallery.component';
 import NavBar from '@components/navbar.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
+import { RightArrowIcon } from '@components/icons/right-arrow.icon';
 
 interface HomeProps {
   projects: SingleProject[];
@@ -32,7 +33,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Andy's American Kustoms</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,18 +61,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
               </button>
               <button className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
                 <span>Contact</span>
-                <svg
-                  className="w-6 h-4 ml-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <RightArrowIcon className="w-6 h-4 ml-2" />
               </button>
             </div>
           </div>
@@ -80,38 +70,28 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
           </div>
         </div>
         <div className="epic-gray h-500">
-          <div className="mx-auto container flex">
-            <p className="text-2xl font-light pt-20 w-3/4">
+          <div className="mx-auto container md:flex">
+            <p className="text-2xl font-light pt-20 md:w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
               maximus mi nec sem sodales, eget pellentesque neque pulvinar.
               Phasellus sollicitudin erat sit amet tempus gravida. Nam in ex
               molestie
             </p>
-            <div className="pt-20 flex-1 text-center self-center">
+            <div className="pt-10 md:pt-20 flex-1 text-center self-center">
               <Link href="/" passHref>
                 <a>
                   <button className="text-grey-800 rounded-tl-lg rounded-br-lg border-2 border-gray-800 text-lg py-3 px-5 inline-flex items-center">
                     <span>All Projects</span>
-                    {/* TODO: SVG needs moving out to a component */}
-                    <svg
-                      className="w-6 h-4 ml-2"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <RightArrowIcon className="w-6 h-4 ml-2" />
                   </button>
                 </a>
               </Link>
             </div>
           </div>
         </div>
-        <div className="md:-mt-60 w-full">{projects && <Gallery items={projects} />}</div>
+        <div className="md:-mt-60 w-full">
+          {projects && <Gallery items={projects} />}
+        </div>
       </main>
       <Footer />
     </>
