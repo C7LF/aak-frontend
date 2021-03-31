@@ -3,49 +3,87 @@
 exports[`Pages Home it renders correctly 1`] = `
 Array [
   <div
-    className="transition-all duration-500 ease-in-out overflow-hidden bg-white fixed w-full top-0 z-10 py-5 mt-0"
+    className=" fixed z-20 md:hidden w-full transition-all duration-300 ease-in-out top-0"
+  >
+    <div
+      className="container flex mx-auto py-5 text-black transition-all duration-300 ease-in-out"
+    >
+      <svg
+        className="w-8 md:hidden mr-6"
+        fill="none"
+        onClick={[Function]}
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6h16M4 12h16M4 18h16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+      <img
+        alt="andy's american kustoms logo"
+        className="mr-10 w-24"
+        src="test-file-stub"
+      />
+    </div>
+  </div>,
+  <div
+    className="transition-all duration-300 ease-in-out overflow-hidden w-full bg-white fixed top-0 z-10 md:py-5 md:mt-0 h-0 md:h-auto"
   >
     <div
       className="container mx-auto"
     >
       <nav
-        className="flex"
+        className="flex flex-col md:flex-row"
       >
         <img
           alt="andy's american kustoms logo"
-          className="mr-10"
+          className="mr-10 w-28 hidden md:block"
           src="test-file-stub"
         />
         <ul
-          className="lg:flex items-center pt-4 lg:pt-0 uppercase font-medium"
+          className="md:flex mt-16 md:mt-0 items-center pt-4 md:pt-0 uppercase font-medium"
         >
           <a
-            className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
             href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Home
           </a>
           <a
-            className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
-            href="about"
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/about"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             About
           </a>
           <a
-            className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
-            href="projects"
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/projects"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Projects
           </a>
           <a
-            className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
-            href="blog"
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/blog"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Blog
           </a>
           <a
-            className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
-            href="contact"
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/contact"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Contact
           </a>
@@ -73,17 +111,31 @@ Array [
           <p
             className="text-gray-200 font-light my-5"
           >
-            This is my 1 man business to restore, repair or modify just about anything! Diagnostics using oscilloscopes, scan tools and test lights are skills that I continue to work on everyday. But my main passion is bringing old machinery back to life and perhaps injecting some new technology at the same time!! Have a look at my projects below and contact me if you think I can help.
+            This is my one man business to restore, repair or modify just about anything! Diagnostics using oscilloscopes, scan tools and test lights are skills that I continue to work on everyday. But my main passion is bringing old machinery back to life and perhaps injecting some new technology at the same time!! Have a look at my projects below and contact me if you think I can help.
           </p>
           <button
-            className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-bold rounded-md bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 mr-3"
+            className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-medium rounded-tl-lg rounded-br-lg bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 hover:border-gray-800 mr-3"
           >
             View Projects
           </button>
           <button
-            className="px-6 py-2.5 text-gray-300 transition-colors duration-150 font-bold rounded-md border-2 border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400"
+            className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400"
           >
-            Contact
+            <span>
+              Contact
+            </span>
+            <svg
+              className="w-6 h-4 ml-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                fillRule="evenodd"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -99,15 +151,15 @@ Array [
       className="epic-gray h-500"
     >
       <div
-        className="mx-auto container flex"
+        className="mx-auto container md:flex"
       >
         <p
-          className="text-2xl font-light pt-20 w-3/4"
+          className="text-2xl font-light pt-20 md:w-3/4"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus mi nec sem sodales, eget pellentesque neque pulvinar. Phasellus sollicitudin erat sit amet tempus gravida. Nam in ex molestie
         </p>
         <div
-          className="pt-20 flex-1 text-center self-center"
+          className="pt-10 md:pt-20 flex-1 text-center self-center"
         >
           <a
             href="/"
@@ -115,25 +167,20 @@ Array [
             onMouseEnter={[Function]}
           >
             <button
-              className="text-grey-800 rounded-md border-2 border-gray-800 text-lg font-bold py-3 px-5 inline-flex items-center"
+              className="text-grey-800 rounded-tl-lg rounded-br-lg border-2 border-gray-800 text-lg py-3 px-5 inline-flex items-center"
             >
               <span>
                 All Projects
               </span>
               <svg
-                className="w-4 h-4 ml-2"
+                className="w-6 h-4 ml-2"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   clipRule="evenodd"
-                  d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                  fillRule="evenodd"
-                />
-                <path
-                  clipRule="evenodd"
-                  d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
                   fillRule="evenodd"
                 />
               </svg>
@@ -143,13 +190,13 @@ Array [
       </div>
     </div>
     <div
-      className="-mt-60"
+      className="md:-mt-60 w-full"
     >
       <div
         className="container mx-auto"
       >
         <div
-          className="grid grid-cols-3 gap-2"
+          className="grid md:grid-cols-3 grid-cols-2 gap-2"
         >
           <div
             className="relative"
@@ -214,7 +261,7 @@ Array [
                 onMouseOver={[Function]}
               >
                 <span
-                  className="border-solid border-2 py-8 px-12 border-gray-50"
+                  className="border-solid border-2 p-4 md:p-8 text-center border-gray-50"
                 >
                   First Post!!
                 </span>
@@ -225,5 +272,35 @@ Array [
       </div>
     </div>
   </main>,
+  <div
+    className="container mx-auto mt-16"
+  >
+    <div
+      className="flex place-content-center py-20"
+    >
+      <a
+        href="https://www.facebook.com/andyskustoms/"
+      >
+        <img
+          alt="facebook icon"
+          className="mx-1"
+          height={40}
+          src="test-file-stub"
+          width={40}
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/andysamericankustoms/"
+      >
+        <img
+          alt="instagram icon"
+          className="mx-1"
+          height={40}
+          src="test-file-stub"
+          width={40}
+        />
+      </a>
+    </div>
+  </div>,
 ]
 `;

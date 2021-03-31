@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 
+import { HamburgerIcon } from '@components/icons/hambuger.icon';
 import { Routes } from '@enums/routes.enum';
 import useWindowPosition from '@utils/use-window-position';
 
 import Logo from '../public/assets/logo.svg';
-import { HamburgerIcon } from '@components/icons/hambuger.icon';
 
 const NavBar: React.FC = () => {
   const position = useWindowPosition();
@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
     !menuOpen
       ? bodyClassList.add(HIDDEN_OVERFLOW)
       : bodyClassList.remove(HIDDEN_OVERFLOW);
-  }
+  };
 
   return (
     <>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 

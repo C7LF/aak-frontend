@@ -6,7 +6,7 @@ module.exports = {
   },
   theme: {
     container: {
-      padding: '1em'
+      padding: '1em',
     },
     fontFamily: {
       body: ['Lato', 'sans-serif'],
