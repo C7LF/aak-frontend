@@ -5,8 +5,8 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
 import { Breadcrumbs } from '@components/breadcrumbs.component';
+import { FancyGallery } from '@components/fancy-gallery.component';
 import { Layout } from '@components/layout.component';
-import { FancyGallery } from '@components/old.fancy-gallery.component';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 

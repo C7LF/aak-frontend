@@ -45,7 +45,7 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
   useOutsideClick(overlay, closeLightBox, lightBoxOpen);
 
   return (
-    <div className="my-12">
+    <div className="my-12 flex flex-wrap">
       {fancyItems.images.map((item, i) => {
         const urlPrefix = process.env.NEXT_PUBLIC_API_URL;
 
@@ -60,23 +60,21 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
         };
 
         return (
-          <div className="flex flex-wrap" key={i}>
-            <div className="w-1/2 lg:w-1/4 h-72 relative">
-              {/* <p>{item.caption}</p> */}
-              <Image
-                className="cursor-pointer "
-                src={`${process.env.NEXT_PUBLIC_API_URL}${item.formats.small.url}`}
-                layout="fill"
-                objectFit="cover"
-                alt={item.alternativeText}
-                onClick={() => toggleLightBox(lbItem)}
-              />
-            </div>
+          <div className="w-1/2 lg:w-1/4 h-72 relative" key={i}>
+            {/* <p>{item.caption}</p> */}
+            <Image
+              className="cursor-pointer "
+              src={`${process.env.NEXT_PUBLIC_API_URL}${item.formats.small.url}`}
+              layout="fill"
+              objectFit="cover"
+              alt={item.alternativeText}
+              onClick={() => toggleLightBox(lbItem)}
+            />
           </div>
         );
       })}
       {lightBoxOpen && lightBoxSource && (
-        <div className="fixed w-full h-full top-0 left-0 z-10 bg-black bg-opacity-80 flex flex-col justify-center">
+        <div className="fixed w-full h-full top-0 left-0 z-20 bg-black bg-opacity-80 flex flex-col justify-center">
           <img
             onKeyDown={() => toggleLightBox(null)}
             src={CloseIcon}

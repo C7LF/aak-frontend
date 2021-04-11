@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
@@ -45,6 +45,12 @@ const NavBar: React.FC = () => {
       ? bodyClassList.add(HIDDEN_OVERFLOW)
       : bodyClassList.remove(HIDDEN_OVERFLOW);
   };
+
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove(HIDDEN_OVERFLOW);
+    };
+  }, []);
 
   return (
     <>
