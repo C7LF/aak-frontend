@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { FancyGalleryItem } from '@models/fancy-gallery-item.model';
-import useOutsideClick from '@utils/use-outside-click';
+import { useOutsideClick } from '@utils';
 
 import CloseIcon from '../public/assets/cancel.svg';
 

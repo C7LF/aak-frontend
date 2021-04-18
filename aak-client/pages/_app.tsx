@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ApolloProvider } from '@apollo/client';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { ApolloProvider } from '@apollo/client';
 import client from '@lib/apollo';
 import '../styles/index.css';
 

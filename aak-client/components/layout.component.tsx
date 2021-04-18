@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Footer } from './footer.component';
-import NavBar from './navbar.component';
+import { Footer, NavBar } from '@components';
 
 interface LayoutProps {
   varient: 'full' | 'regular';

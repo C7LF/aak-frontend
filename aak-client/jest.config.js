@@ -30,6 +30,7 @@ module.exports = {
   moduleNameMapper: {
     '^@graphql(.*)$': '<rootDir>/graphql$1',
     '^@components(.*)$': '<rootDir>/components$1',
+    '^@icons(.*)$': '<rootDir>/components/icons$1',
     '^@models(.*)$': '<rootDir>/models$1',
     '^@config(.*)$': '<rootDir>/config$1',
     '^@mock-data(.*)$': '<rootDir>/mock-data$1',

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Routes } from '@enums/routes.enum';
+import { Routes } from '@enums';
 import { GalleryItem } from '@models/gallery-item.model';
 
 interface GalleryItemProps {

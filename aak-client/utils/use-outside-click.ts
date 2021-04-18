@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
-const useOutsideClick = (
+export const useOutsideClick = (
   ref: RefObject<HTMLImageElement | HTMLDivElement>,
   callback: () => void,
   state: boolean
@@ -19,5 +19,3 @@ const useOutsideClick = (
     };
   }, [state]);
 };
-
-export default useOutsideClick;

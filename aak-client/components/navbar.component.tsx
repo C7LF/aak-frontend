@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 
-import { HamburgerIcon } from '@components/icons/hambuger.icon';
-import { Routes } from '@enums/routes.enum';
-import useWindowPosition from '@utils/use-window-position';
+import { Routes } from '@enums';
+import { HamburgerIcon } from '@icons';
+import { useWindowPosition } from '@utils';
 
 import Logo from '../public/assets/logo.svg';
 
-const NavBar: React.FC = () => {
+export const NavBar: React.FC = () => {
   const position = useWindowPosition();
   const router = useRouter();
 
@@ -94,5 +94,3 @@ const NavBar: React.FC = () => {
     </>
   );
 };
-
-export default NavBar;

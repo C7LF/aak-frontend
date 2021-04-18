@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticProps } from 'next';
 
-import { Footer } from '@components/footer.component';
-import { Gallery } from '@components/gallery.component';
-import NavBar from '@components/navbar.component';
+import { Footer, Gallery, NavBar } from '@components';
+import { GET_PROJECTS } from '@graphql/queries/projects';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 

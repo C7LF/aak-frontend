@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { Footer } from '@components/footer.component';
-import { Gallery } from '@components/gallery.component';
-import { RightArrowIcon } from '@components/icons/right-arrow.icon';
-import NavBar from '@components/navbar.component';
+import { Footer, Gallery, NavBar } from '@components';
+import { Routes } from '@enums';
+import { GET_PROJECTS } from '@graphql/queries/projects';
+import { RightArrowIcon } from '@icons';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 
@@ -56,9 +55,13 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
                 look at my projects below and contact me if you think I can
                 help.
               </p>
-              <button className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-medium rounded-tl-lg rounded-br-lg bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 hover:border-gray-800 mr-3">
-                View Projects
-              </button>
+              <Link href={Routes.Projects} passHref>
+                <a>
+                  <button className="px-6 py-2.5 text-gray-100 transition-colors duration-150 font-medium rounded-tl-lg rounded-br-lg bg-gray-700 border-2 border-gray-700 focus:shadow-outline hover:bg-gray-800 hover:border-gray-800 mr-3">
+                    View Projects
+                  </button>
+                </a>
+              </Link>
               <button className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
                 <span>Contact</span>
                 <RightArrowIcon className="w-6 h-4 ml-2" />
@@ -78,7 +81,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
               molestie
             </p>
             <div className="pt-10 md:pt-20 flex-1 text-center self-center">
-              <Link href="/" passHref>
+              <Link href={Routes.Projects} passHref>
                 <a>
                   <button className="text-grey-800 rounded-tl-lg rounded-br-lg border-2 border-gray-800 text-lg py-3 px-5 inline-flex items-center">
                     <span>All Projects</span>

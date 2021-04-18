@@ -53,12 +53,29 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@apollo/**',
+            pattern: 'next+(/*)',
             group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@apollo/**',
+            group: 'internal',
           },
           {
             pattern: '@graphql/**',
-            group: 'external',
+            group: 'internal',
+          },
+          {
+            pattern: '@components',
+            group: 'internal',
+          },
+          {
+            pattern: '@icons',
+            group: 'internal',
+          },
+          {
+            pattern: '@utils',
+            group: 'internal',
           },
           {
             pattern: '@*/**',

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import useLayoutEffect from './use-isomorphic-layout-effect';
 
-const useWindowPosition = (): number => {
+export const useWindowPosition = (): number => {
   const [scrollPosition, setPosition] = useState(0);
 
   // Detect DOM mutations
@@ -21,5 +21,3 @@ const useWindowPosition = (): number => {
 
   return scrollPosition;
 };
-
-export default useWindowPosition;

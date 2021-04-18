@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 import {
   ApolloClient,
   createHttpLink,
@@ -5,7 +7,6 @@ import {
   InMemoryCache,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
-import fetch from 'node-fetch';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
 

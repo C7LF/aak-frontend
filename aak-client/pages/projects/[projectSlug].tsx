@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
-import { Breadcrumbs } from '@components/breadcrumbs.component';
-import { FancyGallery } from '@components/fancy-gallery.component';
-import { Layout } from '@components/layout.component';
+import { Layout, FancyGallery, Breadcrumbs } from '@components';
+import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
 

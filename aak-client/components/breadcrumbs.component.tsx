@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 
-import { sentenceCase } from '@utils/sentence-case';
+import { sentenceCase } from '@utils';
 
 import ChevronRightIcon from '../public/assets/right-chevron.svg';
 

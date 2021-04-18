@@ -15,14 +15,15 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "paths": {
-      "@components/*": ["components/*"],
+      "@components": ["./components"],
+      "@icons": ["./components/icons"],
       "@config/*": ["config/*"],
       "@mock-data/*": ["mock-data/*"],
       "@graphql/*": ["graphql/*"],
       "@models/*": ["models/*"],
       "@lib/*": ["lib/*"],
-      "@enums/*": ["enums/*"],
-      "@utils/*": ["utils/*"]
+      "@enums": ["./enums"],
+      "@utils": ["./utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
