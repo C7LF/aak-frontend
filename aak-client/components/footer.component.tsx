@@ -6,7 +6,7 @@ import InstagramIcon from '../public/assets/instagram.svg';
 export const Footer: React.FC = () => (
   <>
     <div className="container mx-auto mt-16">
-      <div className="flex place-content-center py-20">
+      <div className="flex place-content-center py-8">
         <a href="https://www.facebook.com/andyskustoms/">
           <img
             src={FacebookIcon}
