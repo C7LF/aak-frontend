@@ -11,6 +11,8 @@ export const getStaticProps: GetStaticProps = async () => {
     query: GET_ABOUT,
   });
 
+  console.log(data)
+
   if (!data) {
     return {
       redirect: {
