@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      content: data.about.content,
+      content: data?.about?.content,
     },
     revalidate: 1,
   };
