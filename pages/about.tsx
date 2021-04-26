@@ -11,9 +11,18 @@ export const getStaticProps: GetStaticProps = async () => {
     query: GET_ABOUT,
   });
 
+  if (!data) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
-      content: data.about.content ?? [''],
+      content: data.about.content,
     },
     revalidate: 1,
   };
