@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   console.log(data)
 
-  if (!data) {
+  if (!data || !data.about) {
     return {
       redirect: {
         destination: '/',
