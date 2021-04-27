@@ -11,8 +11,6 @@ export const getStaticProps: GetStaticProps = async () => {
     query: GET_ABOUT,
   });
 
-  console.log(data);
-
   if (!data || !data.about) {
     return {
       props: {
@@ -25,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       content: data.about.content,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 };
 
