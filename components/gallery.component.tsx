@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { GalleryItem } from '@models/gallery-item.model';
+import { correctImageUrl } from '@utils';
 
 interface GalleryItemProps {
   items: GalleryItem[];
@@ -28,7 +29,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
               >
                 <a>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL}${imageURL}`}
+                    src={correctImageUrl(imageURL)}
                     objectFit="cover"
                     layout="responsive"
                     width="auto"

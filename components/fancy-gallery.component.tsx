@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { FancyGalleryItem } from '@models/fancy-gallery-item.model';
-import { useOutsideClick } from '@utils';
+import { correctImageUrl, useOutsideClick } from '@utils';
 
 import CloseIcon from '../public/assets/cancel.svg';
 
@@ -52,7 +52,7 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
         const { formats, url, width, height, alternativeText, caption } = item;
 
         const lbItem: LightBoxItem = {
-          url: `${urlPrefix}${formats.large?.url ?? url}`,
+          url: correctImageUrl(formats.large?.url ?? url),
           width: formats.large?.width ?? width,
           height: formats.large?.height ?? height,
           alternativeText,
@@ -64,7 +64,7 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
             {/* <p>{item.caption}</p> */}
             <Image
               className="cursor-pointer "
-              src={`${process.env.NEXT_PUBLIC_API_URL}${item.formats.small.url}`}
+              src={correctImageUrl(item.formats.small.url)}
               layout="fill"
               objectFit="cover"
               alt={item.alternativeText}

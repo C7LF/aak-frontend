@@ -7,6 +7,7 @@ import { Layout, FancyGallery, Breadcrumbs } from '@components';
 import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
+import { correctImageUrl } from '@utils';
 
 interface ProjectProps {
   project: SingleProject;
@@ -69,7 +70,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
           </div>
           <div className="md:w-1/2 h-pi relative">
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${project.image.url}`}
+              src={correctImageUrl(project.image.url)}
               alt={project.image.alternativeText}
               loading="lazy"
               layout="fill"
