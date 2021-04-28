@@ -2,6 +2,6 @@ const withImages = require('next-images');
 
 module.exports = withImages({
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'aak-backend.herokuapp.com'],
   },
 });
