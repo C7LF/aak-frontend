@@ -19,7 +19,6 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
       <div className="grid md:grid-cols-3 grid-cols-2 gap-2">
         {items.map((item: GalleryItem) => {
           const { url: imageURL } = item.image.formats.small ?? item.image;
-          console.log(correctImageUrl(imageURL))
 
           return (
             <div key={item.id} className="relative">
