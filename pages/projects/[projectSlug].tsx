@@ -3,7 +3,12 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 
-import { Layout, FancyGallery, Breadcrumbs } from '@components';
+import {
+  Layout,
+  FancyGallery,
+  Breadcrumbs,
+  MarkdownContent,
+} from '@components';
 import { GET_PROJECT, GET_PROJECTS } from '@graphql/queries/projects';
 import client from '@lib/apollo';
 import { SingleProject } from '@models/project.model';
@@ -44,14 +49,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const newLineText = (text: string) => {
-  return text.split('\n').map((str: string, i) => (
-    <p key={i} className="mt-8">
-      {str}
-    </p>
-  ));
-};
-
 const Project: React.FC<ProjectProps> = ({ project }) => {
   if (project) {
     return (
@@ -78,8 +75,8 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
             />
           </div>
         </div>
-        <div className="container mx-auto relative">
-          {newLineText(project.content)}
+        <div className="container mx-auto relative mt-10">
+          <MarkdownContent content={project.content} />
           {project.fancyGallery && (
             <FancyGallery fancyItems={project.fancyGallery} />
           )}

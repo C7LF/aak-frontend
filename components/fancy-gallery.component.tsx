@@ -47,8 +47,6 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
   return (
     <div className="my-12 flex flex-wrap">
       {fancyItems.images.map((item, i) => {
-        const urlPrefix = process.env.NEXT_PUBLIC_API_URL;
-
         const { formats, url, width, height, alternativeText, caption } = item;
 
         const lbItem: LightBoxItem = {

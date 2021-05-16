@@ -62,10 +62,14 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
                   </button>
                 </a>
               </Link>
-              <button className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
-                <span>Contact</span>
-                <RightArrowIcon className="w-6 h-4 ml-2" />
-              </button>
+              <Link href={Routes.Contact} passHref>
+                <a>
+                  <button className="inline-flex items-center px-6 py-2.5 text-gray-300 transition-colors duration-150 font-medium rounded-md border-gray-300 focus:shadow-outline hover:border-gray-400 hover:text-gray-400">
+                    <span>Contact</span>
+                    <RightArrowIcon className="w-6 h-4 ml-2" />
+                  </button>
+                </a>
+              </Link>
             </div>
           </div>
           <div className="right bg-hero-bg bg-no-repeat sm:w-1/3 md:w-2/3 -ml-20 object-cover h-full bg-cover bg-right hidden sm:flex">
