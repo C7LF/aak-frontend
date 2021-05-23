@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import { Footer, Gallery, NavBar } from '@components';
 import { GET_PROJECTS } from '@graphql/queries/projects';
@@ -27,6 +28,9 @@ export const getStaticProps: GetStaticProps = async () => {
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <>
+      <Head>
+        <title>Projects | AAK</title>
+      </Head>
       <NavBar />
       <div className="bg-gray-50 py-24 pt-32 md:pt-44 mb-16">
         <div className="container mx-auto">

@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { Footer, NavBar } from '@components';
 import { GET_ABOUT } from '@graphql/queries/about';
 import client from '@lib/apollo';
+import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
@@ -38,6 +39,9 @@ const newLineText = (text: string) => {
 export const Contact: React.FC<{ content: string }> = ({ content }) => {
   return (
     <>
+      <Head>
+        <title>About | AAK</title>
+      </Head>
       <NavBar />
       <div className="py-24 pt-32 md:pt-44 text-center">
         <div className="container mx-auto">
