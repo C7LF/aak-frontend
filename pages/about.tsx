@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import { Footer, NavBar } from '@components';
 import { GET_ABOUT } from '@graphql/queries/about';
 import client from '@lib/apollo';
-import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({

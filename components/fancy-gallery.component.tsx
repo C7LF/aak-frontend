@@ -59,9 +59,8 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
 
         return (
           <div className="w-1/2 lg:w-1/4 h-72 relative" key={i}>
-            {/* <p>{item.caption}</p> */}
             <Image
-              className="cursor-pointer "
+              className="cursor-pointer"
               src={correctImageUrl(item.formats.small.url)}
               layout="fill"
               objectFit="cover"
@@ -91,6 +90,12 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
               ref={overlay}
               alt={lightBoxSource.alternativeText}
             />
+            <p
+              className="z-10 text-white text-center mt-3"
+              style={{ maxWidth: lightBoxSource.width }}
+            >
+              {lightBoxSource.caption}
+            </p>
           </div>
         </div>
       )}

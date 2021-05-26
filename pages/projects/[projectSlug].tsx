@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import Head from 'next/head';
+import Image from 'next/image';
 
 import {
   Layout,

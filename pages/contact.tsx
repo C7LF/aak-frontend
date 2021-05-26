@@ -1,11 +1,16 @@
 import React from 'react';
 
+import Head from 'next/head';
+
 import { Footer, NavBar } from '@components';
 import { EnvolopeIcon, LocationIcon, PhoneIcon } from '@icons';
 
 export const Contact: React.FC = () => {
   return (
     <>
+      <Head>
+        <title>Contact | AAK</title>
+      </Head>
       <NavBar />
       <div className="py-24 pt-32 md:pt-44 text-center">
         <div className="container mx-auto">
