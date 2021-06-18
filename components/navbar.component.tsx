@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { Routes } from '@enums';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 
+import { Routes } from '@enums';
 import { HamburgerIcon } from '@icons';
 import { useWindowPosition } from '@utils';
 

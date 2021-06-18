@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Routes } from '@enums';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
 import { Footer, Gallery, NavBar } from '@components';
+import { Routes } from '@enums';
 import { GET_PROJECTS } from '@graphql/queries/projects';
 import { RightArrowIcon } from '@icons';
 import client from '@lib/apollo';

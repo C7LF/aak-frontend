@@ -3,7 +3,7 @@ export const API_URL =
 
 export const correctImageUrl = (imageUrl: string): string => {
   if (!imageUrl) {
-    return '/vercel.svg'; // Or default image here
+    return `${API_URL}/public/img/camaro.jpg`; // Or default image here
   }
   if (imageUrl.indexOf('/') === 0) {
     // It's a relative url, add API URL

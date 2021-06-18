@@ -3,7 +3,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Footer, NavBar } from '@components';
+import { Footer, MarkdownContent, NavBar } from '@components';
 import { GET_ABOUT } from '@graphql/queries/about';
 import client from '@lib/apollo';
 
@@ -28,14 +28,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const newLineText = (text: string) => {
-  return text.split('\n').map((str: string, i) => (
-    <p key={i} className="text-xl font-light mt-4">
-      {str}
-    </p>
-  ));
-};
-
 export const Contact: React.FC<{ content: string }> = ({ content }) => {
   return (
     <>
@@ -47,7 +39,9 @@ export const Contact: React.FC<{ content: string }> = ({ content }) => {
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold text-gray-800">ABOUT</h1>
           <div className="border border-b-4 border-gray-400 mx-auto w-16 my-6"></div>
-          <div className="md:w-3/4 mx-auto">{newLineText(content)}</div>
+          <div className="md:w-3/4 mx-auto">
+            <MarkdownContent content={content} />
+          </div>
         </div>
       </div>
       <Footer />

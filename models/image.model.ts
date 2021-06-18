@@ -1,4 +1,4 @@
-export interface Thumbnail {
+export interface ImageSizeFormat {
   name: string;
   hash: string;
   ext: string;
@@ -10,19 +10,9 @@ export interface Thumbnail {
   url: string;
 }
 
-export interface Small {
-  name: string;
-  hash: string;
-  ext: string;
-  mime: string;
-  width: number;
-  height: number;
-  size: number;
-  path: string;
-  url: string;
-}
-
-export type Large = Small;
+export type Large = ImageSizeFormat;
+export type Thumbnail = ImageSizeFormat;
+export type Small = ImageSizeFormat;
 
 export interface Formats {
   thumbnail: Thumbnail;

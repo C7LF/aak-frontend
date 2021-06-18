@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { Routes } from '@enums';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Routes } from '@enums';
 import { GalleryItem } from '@models/gallery-item.model';
 import { correctImageUrl } from '@utils';
 

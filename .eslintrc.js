@@ -70,6 +70,10 @@ module.exports = {
             group: 'internal',
           },
           {
+            pattern: '@enums',
+            group: 'internal',
+          },
+          {
             pattern: '@icons',
             group: 'internal',
           },
