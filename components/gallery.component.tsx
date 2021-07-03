@@ -16,7 +16,7 @@ export const Gallery: React.FC<GalleryItemProps> = ({ items }) => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid md:grid-cols-3 grid-cols-2 gap-2">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-2">
         {items.map((item: GalleryItem) => {
           const { url: imageURL } = item.image.formats.small ?? item.image;
 

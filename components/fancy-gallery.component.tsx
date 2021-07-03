@@ -58,7 +58,7 @@ export const FancyGallery: React.FC<FancyGalleryItemProps> = ({
         };
 
         return (
-          <div className="w-1/2 lg:w-1/4 h-72 relative" key={i}>
+          <div className="w-full sm:w-1/2 lg:w-1/4 h-96 sm:h-72 relative" key={i}>
             <Image
               className="cursor-pointer"
               src={correctImageUrl(item.formats.small.url)}
