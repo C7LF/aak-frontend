@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export const Contact: React.FC<{ content: string }> = ({ content }) => {
+export const About: React.FC<{ content: string }> = ({ content }) => {
   return (
     <>
       <Head>
@@ -40,7 +40,7 @@ export const Contact: React.FC<{ content: string }> = ({ content }) => {
           <h1 className="text-4xl font-bold text-gray-800">ABOUT</h1>
           <div className="border border-b-4 border-gray-400 mx-auto w-16 my-6"></div>
           <div className="md:w-3/4 mx-auto">
-            <MarkdownContent content={content} />
+              <MarkdownContent content={content} />
           </div>
         </div>
       </div>
@@ -49,4 +49,4 @@ export const Contact: React.FC<{ content: string }> = ({ content }) => {
   );
 };
 
-export default Contact;
+export default About;

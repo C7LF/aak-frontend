@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-}
+@layer components {}
 
 @layer utilities {
-  .h-500 {
-    min-height: 500px;
+  .h-diag {
+    min-height: 38.25rem;
+  }
+
+  @media(min-width: 640px) {
+    .h-diag {
+      min-height: 31.25rem;
+    }
   }
 
   .h-pi {
@@ -18,20 +23,16 @@
 /* Custom Radial Gradient */
 .rad-red {
   background: rgb(211, 2, 1);
-  background: radial-gradient(
-    circle,
-    rgba(211, 2, 1, 1) 0%,
-    rgba(169, 1, 0, 1) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(211, 2, 1, 1) 0%,
+      rgba(169, 1, 0, 1) 100%);
 }
 
 .epic-gray {
   background: rgb(251, 251, 251);
-  background: linear-gradient(
-    183deg,
-    #f0f0f0 calc(75% - 1px),
-    rgba(255, 255, 255, 1) 75%
-  );
+  background: linear-gradient(183deg,
+      #f0f0f0 calc(75% - 1px),
+      rgba(255, 255, 255, 1) 75%);
 }
 
 /* z-index not working? */

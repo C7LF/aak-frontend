@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About it renders correctly 1`] = `
+Array [
+  <div
+    className=" fixed z-20 md:hidden w-full transition-all duration-300 ease-in-out top-0"
+  >
+    <div
+      className="container flex mx-auto py-5 text-black transition-all duration-300 ease-in-out"
+    >
+      <svg
+        className="w-8 md:hidden mr-6"
+        fill="none"
+        onClick={[Function]}
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6h16M4 12h16M4 18h16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+      <img
+        alt="andy's american kustoms logo"
+        className="mr-10 w-24"
+        src="test-file-stub"
+      />
+    </div>
+  </div>,
+  <div
+    className="transition-all duration-300 ease-in-out overflow-hidden w-full bg-white fixed top-0 z-10 md:py-5 md:mt-0 h-0 md:h-auto"
+  >
+    <div
+      className="container mx-auto"
+    >
+      <nav
+        className="flex flex-col md:flex-row"
+      >
+        <img
+          alt="andy's american kustoms logo"
+          className="mr-10 w-28 hidden md:block"
+          src="test-file-stub"
+        />
+        <ul
+          className="md:flex mt-16 md:mt-0 items-center pt-4 md:pt-0 uppercase font-medium"
+        >
+          <a
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home
+          </a>
+          <a
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/about"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            About
+          </a>
+          <a
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/projects"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Projects
+          </a>
+          <a
+            className="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:text-red-700"
+            href="/contact"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Contact
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </div>,
+  <div
+    className="py-24 pt-32 md:pt-44 text-center"
+  >
+    <div
+      className="container mx-auto"
+    >
+      <h1
+        className="text-4xl font-bold text-gray-800"
+      >
+        ABOUT
+      </h1>
+      <div
+        className="border border-b-4 border-gray-400 mx-auto w-16 my-6"
+      />
+      <div
+        className="md:w-3/4 mx-auto"
+      >
+        <p
+          className="mb-8"
+        >
+          this is some content
+        </p>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container mx-auto mt-16"
+  >
+    <div
+      className="flex place-content-center py-8"
+    >
+      <a
+        href="https://www.facebook.com/andyskustoms/"
+      >
+        <img
+          alt="facebook icon"
+          className="mx-1"
+          height={40}
+          src="test-file-stub"
+          width={40}
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/andysamericankustoms/"
+      >
+        <img
+          alt="instagram icon"
+          className="mx-1"
+          height={40}
+          src="test-file-stub"
+          width={40}
+        />
+      </a>
+    </div>
+  </div>,
+]
+`;

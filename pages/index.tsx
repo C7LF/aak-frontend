@@ -76,7 +76,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
             <div className="absolute h-2/3 w-36 transform -skew-x-6 bg-secondary self-center"></div>
           </div>
         </div>
-        <div className="epic-gray h-500">
+        <div className="epic-gray h-diag">
           <div className="mx-auto container md:flex">
             <p className="text-2xl font-light pt-20 md:w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras

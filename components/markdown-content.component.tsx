@@ -35,8 +35,10 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = ({
   };
 
   return (
-    <ReactMarkdown components={defaultStyling} {...opt}>
-      {content}
-    </ReactMarkdown>
+    content && (
+      <ReactMarkdown components={defaultStyling} {...opt}>
+        {content}
+      </ReactMarkdown>
+    )
   );
 };
